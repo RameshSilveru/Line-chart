@@ -1,0 +1,26 @@
+<h1>Line Chart</h1>
+<input type="file" class="file-chooser" accept=".csv"  (change)="onFileChange($event)" #fileInput>
+<div>
+
+  <div class="alert alert-danger" *ngIf = "showErrors">
+   CSV has errors.Please upload proper file.
+  </div>
+
+<ngx-charts-line-chart *ngIf="dataToChart.length"
+[view]="view"
+[scheme]="colorScheme"
+[results]="dataToChart"
+[gradient]="gradient"
+[xAxis]="showXAxis"
+[yAxis]="showYAxis"
+[legend]="showLegend"
+[showXAxisLabel]="showXAxisLabel"
+[showYAxisLabel]="showYAxisLabel"
+[xAxisLabel]="xAxisLabel"
+[yAxisLabel]="yAxisLabel"
+[autoScale]="autoScale"
+[timeline]="timeline"
+>
+</ngx-charts-line-chart>
+
+</div>
